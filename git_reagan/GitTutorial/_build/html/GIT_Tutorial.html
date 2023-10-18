@@ -1,0 +1,1124 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>FSU Libraries Git Tutorial &#8212; FSU Libraries Git Tutorial</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'GIT_Tutorial';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="Git_Tutorial1.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/FSUSeal.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/FSUSeal.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="Git_Tutorial1.html">
+                    FSU Libraries Git Tutorial
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 1</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial2.html">Git_Tutorial2</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 2</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial3.html">Git_Tutorial3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial4.html">Git_Tutorial4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial5.html">Git_Tutorial5</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Part 3</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial10.html">Git_Tutorial10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial11.html">Git_Tutorial11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial12.html">Git_Tutorial12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial13.html">Git_Tutorial13</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Git_Tutorial15.html">Git_Tutorial15</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2FGIT_Tutorial.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/GIT_Tutorial.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>FSU Libraries Git Tutorial</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FSU Libraries Git Tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial2">Git_Tutorial2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial3">Git_Tutorial3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial4">Git_Tutorial4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial5">Git_Tutorial5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial6">Git_Tutorial6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial7">Git_Tutorial7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial8">Git_Tutorial8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial9">Git_Tutorial9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial10">Git_Tutorial10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial11">Git_Tutorial11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial12">Git_Tutorial12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial13">Git_Tutorial13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial14">Git_Tutorial14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial15">Git_Tutorial15</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <!-- section -->
+<section class="tex2jax_ignore mathjax_ignore" id="fsu-libraries-git-tutorial">
+<h1>FSU Libraries Git Tutorial<a class="headerlink" href="#fsu-libraries-git-tutorial" title="Permalink to this heading">#</a></h1>
+<p><strong>In This Tutorial You Will Learn:</strong></p>
+<ul class="simple">
+<li><p>What Git is typically used for</p></li>
+<li><p>The difference between Git and GitHub</p></li>
+<li><p>How to access Git and GitHub</p></li>
+<li><p>Linking Git and GitHub</p></li>
+<li><p>Basic vocabulary</p></li>
+<li><p>The difference between cloning and forking</p></li>
+<li><p>Git add, commit and push</p></li>
+<li><p>Working with branches</p></li>
+<li><p>Pull, fetch and merge</p></li>
+<li><p>Git aliases and helpful Unix commands</p></li>
+<li><p>The correct workflow</p></li>
+<li><p>Git URL protocols</p></li>
+</ul>
+<p><strong>Audience and Prerequisites</strong><br />
+This tutorial will help beginners learn the basics of Git and Github. We assume that you have some experience with the terminal/command prompt. We also assume that you are using Git to help manage coding projects. Also note that for this tutorial we will be using Git in the command line only.</p>
+<p><strong>What is Git and why should you use it?</strong><br />
+Git is a free and open source distributed version control system, developed by Linus Torvals in 2005. There are several different types of distributed version control systems, but Git is great because it is free, open source, has a very low runtime, has implicit backup, and is very secure. Git has great support with branching, merging and pull requests, which allow teams to collaborate and efficiently work with each other’s code. While allowing developers to work simultaneously, it also prevents overwriting each other’s changes. Git is the most popular and widely used version-control system today.</p>
+<p>It can be used for:</p>
+<ol class="arabic simple">
+<li><p>Tracking code changes</p></li>
+<li><p>Tracking who made code changes</p></li>
+<li><p>Coding collaboration</p></li>
+</ol>
+<p><strong>What is the difference between Git and GitHub?</strong></p>
+<ul class="simple">
+<li><p>Git is the tool that helps you keep track of changes to your project, and manages your projects history on your local machine</p></li>
+<li><p>GitHub is a website that you can use to store and share your Git projects publicly and privately</p></li>
+<li><p>GitHub is essentially a hosting service for Git repositories, that has a user-friendly interface</p></li>
+<li><p>Many developers use both Git and GitHub at the same time, to maximize their productivity and collaboration efforts</p></li>
+</ul>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial2">
+<h1>Git_Tutorial2<a class="headerlink" href="#git-tutorial2" title="Permalink to this heading">#</a></h1>
+<p><strong>How Do You Access Git and GitHub?</strong></p>
+<ul class="simple">
+<li><p>To access Git, you may need to download it on your local machine, but first you should check and see if your machine already has it by using the following command on your terminal/command prompt:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Use the following command on your terminal/command prompt:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>If the terminal returns your Git version, then you already have Git installed. If not, follow the next steps to download and configure Git:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Download Git from the official website:<br />
+<a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p></li>
+<li><p>Configure Git with your name and email address using the terminal/command prompt:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.name<span class="w"> </span><span class="s2">&quot;Your Name&quot;</span><span class="w">  </span>
+git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>user.email<span class="w"> </span>your.email@example.com
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p>Verify that Git installed correctly using the following:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>--version
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>To verify your Git settings on your local repository, use the following command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--list
+</pre></div>
+</div>
+<p><em>Keep in mind:</em></p>
+<ul class="simple">
+<li><p><em>Git is available for different operating systems, so be sure to choose and follow the instructions for the appropriate version for your system</em></p></li>
+<li><p><em>Also, the name and email that you choose to configure Git will be associated with your Git commits, so choose carefully</em></p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Now let’s move on to accessing GitHub:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Create a GitHub account through the GitHub website: <a class="github reference external" href="https://github.com/"></a></p></li>
+</ol>
+</div></blockquote>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial3">
+<h1>Git_Tutorial3<a class="headerlink" href="#git-tutorial3" title="Permalink to this heading">#</a></h1>
+<p><strong>Lets go over some vocabulary</strong></p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Working Directory:</strong> the place where you are currently editing your files</p></li>
+<li><p><strong>Staging Area:</strong> a place between your working directory and the repository, where you prepare and select the changes you want to include in the next commit</p></li>
+<li><p><strong>Repository (repo):</strong> a storage location where your Git project is located, a repository can exist both on your local machine (local repository) and on Github (remote repository)</p></li>
+<li><p><strong>Branch:</strong> a separate line of development that allows you to work on a section of code independently, without affecting the main code of your project</p></li>
+<li><p><strong>Merge:</strong> combining changes from one branch into another, which is used to bring together the work done on different branches</p></li>
+<li><p><strong>Conflict:</strong> a situation where Git cannot automatically merge changes and requires manual fixes</p></li>
+<li><p><strong>Clone:</strong> creating a local copy of a Git repository</p></li>
+<li><p><strong>Fork:</strong> creating a personal copy of the repository under your GitHub account</p></li>
+</ul>
+</div></blockquote>
+<p><strong>The difference between fork and clone:</strong><br />
+<em><strong>Forking</strong></em> is typically used when you want to contribute to a project that is hosted on GitHub. When you fork a repository, you create a personal copy of the repository under your GitHub account, in which you can experiment and make changes without altering the original project. However, if you wish to propose changes, you can create a pull request to request that the original project owner incorporate your changes into the main repository.</p>
+<p><em><strong>Cloning</strong></em> is typically used when you want to copy another repository to your local machine, to work independently or contribute to it. When you clone a repository, you get an exact copy of the entire project (including branches and commit history). Cloning is a local operation, and any changes you make will not affect the original repository, unless you explicitly push your changes back</p>
+<p><strong>Git Basic Workflow</strong></p>
+<ol class="arabic simple">
+<li><p>Initialize a Git repository</p></li>
+<li><p>Modify a file from your working directory</p></li>
+<li><p>Add the file(s) to the staging area</p></li>
+<li><p>Commit the files, which moves them from the staging area</p></li>
+<li><p>Create branches for different features/fixes</p></li>
+<li><p>Combine changes using merge or pull requests</p></li>
+<li><p>Link to GitHub and push/pull to store the changes permanently to the GitHub repository</p></li>
+<li><p>Collaborate, review changes, and propose pull requests with GitHub and repeat the process</p></li>
+</ol>
+<p><img alt="BasicGitWorkflow" src="_images/git-workflow-1.png" /></p>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial4">
+<h1>Git_Tutorial4<a class="headerlink" href="#git-tutorial4" title="Permalink to this heading">#</a></h1>
+<p><strong>Now We Can Set Up a Repository</strong></p>
+<ul class="simple">
+<li><p>A repository is typically used to organize a single project</p></li>
+<li><p>They can contain folders, files, images, videos, spreadsheets, data sets, etc.</p></li>
+<li><p>There are a few different options when setting up a repository</p></li>
+<li><p>You can initialize a new repository, initialize a new repository for existing code, or clone an existing repository</p></li>
+<li><p>To initialize a new repository do the following:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open your terminal/command prompt</p></li>
+<li><p>Navigate to the directory where you want to create the new repository, or make a new directory for it (keep in mind that the name of the directory/subdirectory will be the name of the repository)</p></li>
+<li><p>Once you are in the directory that you would like to use, use the following command to start a new, empty Git repository in the current directory:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Git will send a message verifying that it successfully initialized an empty repository</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>To initialize a new repository for existing code do the following:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>Open your terminal/command prompt</p></li>
+<li><p>Navigate to the directory with your existing project</p></li>
+<li><p>Once you are in the directory that you would like to use, use the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>git<span class="w"> </span>init
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Git will send a message verifying that it successfully initialized a repository</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>To clone an existing repository do the following:</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>First you will need to get the Git SSH URL of the repository you would like to clone</p></li>
+<li><p>To do this, open the GitHub website and locate the repository that you would like to clone</p></li>
+<li><p>Next, click the green code button, and in the local tab it should show a SSH tab with a SSH address</p></li>
+<li><p>Copy this address, which should look like the following:</p></li>
+<li><p><em>git&#64;HOSTNAME:USERNAME/REPONAME.git</em></p></li>
+<li><p>Now open your terminal/command prompt, and navigate to the directory where you would like to have the cloned repository</p></li>
+<li><p>Once you are in the desired directory, use the following command with the SSH URL from earlier:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@HOSTNAME:USERNAME/REPONAME.git
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now the repository will be cloned and can be located in your desired directory</p></li>
+</ul>
+</div></blockquote>
+<p><em>Keep in mind:</em></p>
+<ul class="simple">
+<li><p><em>In addition to using SSH URLs for cloning, GitHub also provides HTTPS URLs for cloning, which may be preferred in some situations</em></p></li>
+</ul>
+ <!-- section --><p>What is the command to initialize Git?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git init</p>
+<!-- section -->
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial5">
+<h1>Git_Tutorial5<a class="headerlink" href="#git-tutorial5" title="Permalink to this heading">#</a></h1>
+<p><strong>Understanding Git concepts</strong></p>
+<ul class="simple">
+<li><p>After making changes to files in your repository, follow these steps to add those new versions to your repository using terminal/command prompt</p></li>
+<li><p>These commands need to be executed in the working directory of your Git repository (the folder on your local machine that has the files and directories of your project):</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><em>Git Add</em> - This is used to take your modified files and mark them as ready to be saved and included in the next commit</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>&lt;file<span class="o">(</span>s<span class="o">)</span>&gt;
+</pre></div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><em>Git Commit</em>- This is used to save the modified files permanently, and the -m flag is used to add a brief description of what you changed</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;commit message&quot;</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><em>Git Push</em>- This is used to upload the commit made from your local machine, to your repository</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push<span class="w"> </span>&lt;repository<span class="w"> </span>name&gt;&lt;branch<span class="w"> </span>name&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>You can also use <em>Git Status</em>, to display the current state of the Git repository (this will give you information about the different states of your files)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+</div></blockquote>
+<p><img alt="Git Basic Workflow" src="GitWorkFlowDiagram1.png" /></p>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial6">
+<h1>Git_Tutorial6<a class="headerlink" href="#git-tutorial6" title="Permalink to this heading">#</a></h1>
+<p>What is the command to check the status of Git?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git status</p>
+</div>
+<p>What is the command to add a file to the staging environment?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git add <fileName></p>
+</div>
+<p>What is the command to commit changes to the current repository, with a message?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git commit -m “Message”</p>
+<!-- section -->
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial7">
+<h1>Git_Tutorial7<a class="headerlink" href="#git-tutorial7" title="Permalink to this heading">#</a></h1>
+<p><strong>Why link Git and GitHub?</strong><br />
+Since Git allows you to manage changes to your code, it provides a complete history of all modifications made, which makes it easy to revert to a previous version when needed. Git allows collaboration among team members, so that multiple developers can work on the same project at the same time. Git manages the changes made to a code from different team members and merges them. Git also has a “branching” feature which allows developers to create separate branches for new features, without affecting the main code. By linking your Git with your GitHub, you can easily make your repositories accessible to others. Having your Git repository linked to your GitHub allows GitHub to serve as a backup if your local machine fails (for example if you delete your entire project off of your local machine).</p>
+<p><strong>Linking a local repo with GitHub</strong><br />
+Now that we have initialized a local repository and added files to this repository, we can link the local repository to your GitHub account. Essentially we will be making a new empty repository on GitHub, and then pushing your local repository into this GitHub repository. If you only want to keep track of your code locally, then you do not need to use GitHub. However if you plan to work collaboratively, then you should use GitHub. To link your local repository with your GitHub account, do the following steps:</p>
+<ol class="arabic simple">
+<li><p>Naviate to the directory of your local Git repository</p></li>
+<li><p>Go to the GitHub website and log into your account</p></li>
+<li><p>Click on the “+” sign in the top right corder, and select “new repository”</p></li>
+<li><p>Give the repository a name and description, and then click the “create repository” button</p></li>
+<li><p>On the GitHub repository page, you will see the URL of your new repository (<a class="github reference external" href="https://github.com/yourUsername/yourRepo.git">yourUsername/yourRepo.git</a>)</p></li>
+<li><p>Go back to your terminal or command prompt, navigate to the directory with the local repository, and use the following commands:</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>remote<span class="w"> </span>add<span class="w"> </span>origin<span class="w"> </span>https://github.com/yourusername/your-repo.git
+git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin<span class="w"> </span>main
+</pre></div>
+</div>
+</div></blockquote>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial8">
+<h1>Git_Tutorial8<a class="headerlink" href="#git-tutorial8" title="Permalink to this heading">#</a></h1>
+<p><strong>Working with branches</strong></p>
+<ul class="simple">
+<li><p>As mentioned previously, branching is used to edit the code directly but without impacting the main branch or any other branches</p></li>
+<li><p>In other words, branching lets you have multiple different versions of a repository at one time</p></li>
+<li><p>Also, any changes made will not be automatically implemented into your repository</p></li>
+<li><p>By default your repository has one branch named <em>main</em>, but you can create additional branches!</p></li>
+<li><p>To create a new branch type the following in terminal/command prompt:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch<span class="w"> </span>branchName
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To see the available branches that you have, type the following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>branch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>To switch to a different branch, type the following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>desiredBranch
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Lets say for example, you just updated one of the files in the directory of your repository</p></li>
+<li><p>You can use the following command to see what files have been changed on that branch, and the “progress” of each file:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Once you check the status, then you can go on to adding, committing, and pushing the files</p></li>
+</ul>
+<p><em>Keep in mind:</em></p>
+<ul class="simple">
+<li><p><em>Before switching branches, it is good practice to ensure that any uncommitted changes in the current branch are committed to avoid conflicts</em></p></li>
+<li><p><em>It is also good practice to create descriptive and meaningful branch names that indicate the purpose/feature being worked on</em></p></li>
+<li><p><em>When you create a new branch, you are essentially making a copy of the main branch as it was at that point in time</em></p></li>
+<li><p><em>If someone made changes to the main branch while you were working on a different branch, you could pull in those updates</em></p></li>
+</ul>
+<p><strong>Forking a Repository</strong></p>
+<ul class="simple">
+<li><p>Forking is mainly used to propose changes to someone else’s project, or to use someone else’s project as a starting point for your project</p></li>
+<li><p>To fork a repository, use the following steps:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Log into your GitHub account, and navigate to the repository that you would like to form</p></li>
+<li><p>In the top right corner of the page, click the fork button</p></li>
+<li><p>Select the dropdown button and click an owner for the forked repository</p></li>
+<li><p>You can also change the name of the forked repository if you would like</p></li>
+<li><p>Select what branch you would like to copy (typically you only need to copy the default branch)</p></li>
+<li><p>Click the create fork button</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Now you have the forked repository</p></li>
+<li><p>However, you do not have the repository contents saved locally on your device, so you have to clone it</p></li>
+<li><p>To clone a forked repository, use the following steps</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Log into GitHub, and navigate to your forked repository</p></li>
+<li><p>Click on the green code button and copy the SSH URL</p></li>
+<li><p>Now open your terminal or command prompt, and navigate to the directory where you want the forked repository</p></li>
+<li><p>Use the following Git command:</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>git@HOSTNAME:USERNAME/REPONAME.git<span class="w">  </span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p>Now your local copy of the forked repository has been created!</p></li>
+</ol>
+</div></blockquote>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial9">
+<h1>Git_Tutorial9<a class="headerlink" href="#git-tutorial9" title="Permalink to this heading">#</a></h1>
+<p>What is the command to switch to a different branch?</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git checkout desiredBranch</p>
+<!-- section -->
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial10">
+<h1>Git_Tutorial10<a class="headerlink" href="#git-tutorial10" title="Permalink to this heading">#</a></h1>
+<p><strong>Git Pull, Fetch, and Merge</strong></p>
+<ul class="simple">
+<li><p>When doing group work/collaboration on a code project, it is important to always have the most recent changes on your local machine</p></li>
+<li><p>You can do this using a few Git commands</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Fetch</strong> is used to get the history of the changes</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>fetch<span class="w"> </span>origin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now check the <strong>status</strong> so that we can see the how behind our code is from the updated code</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now we can check the exact differences between our code and the updated code in a few different ways:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>log<span class="w"> </span>origin
+git<span class="w"> </span>diff<span class="w"> </span>origin
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Now we can use <strong>merge</strong> to combine our current branch, with a specified branch (the branch with the updated code)</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>merge<span class="w"> </span>origin/&lt;branchName&gt;
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Finally we can double check that we are up to date using <strong>status</strong></p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>status<span class="w"> </span>
+</pre></div>
+</div>
+</div></blockquote>
+<ul class="simple">
+<li><p>There is also a shortcut to doing those commands above, which is to use the <strong>pull</strong> command, which is the combination of fetch and merge</p></li>
+<li><p>This shortcut came out after fetch and merge were created</p></li>
+<li><p>You can almost always use the <strong>pull</strong> command, unless you wanted to merge one change at a time</p></li>
+</ul>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>pull<span class="w"> </span>origin
+</pre></div>
+</div>
+</div></blockquote>
+<p><em>Keep in mind:</em></p>
+<ul class="simple">
+<li><p><em>Users should replace “origin” with the appropriate remote name if they have multiple remote repositories</em></p></li>
+<li><p><em>When using git pull, if there are any conflicts between your changes and changes from the remote repository, this command will attempt to auto-merge but may require manual resolution</em></p></li>
+<li><p><em>You may face an issue known as a merge conflict, which means that Git was unable to successfully merge the branches, which can be due to a variety of different issues</em></p></li>
+<li><p><em>I would recommend looking at the GitHub website for solutions to this issue, since there is no one universal solution</em></p></li>
+</ul>
+<p><strong>Pull requests</strong></p>
+<ul class="simple">
+<li><p>Pull requests are used to propose your changes to be reviewed, and be merged into the main branch</p></li>
+<li><p>You would typically use a pull request in a collaborative workflow, especially when you are working with a repository that you do not have direct access to</p></li>
+<li><p>Pull requests allow maintainers of the repository to review changes and see differences between branches before merging branches into the main branch</p></li>
+<li><p>To create a pull request perform the following steps in GitHub:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Log into your GitHub account, and open your repository</p></li>
+<li><p>Click the pull requests tab of your repository, and then click new pull request</p></li>
+<li><p>In the example comparisons box, select the branch you made, to compare with the main branch</p></li>
+<li><p>Look over the differences between branches, and make sure that you are ready to submit the request</p></li>
+<li><p>Click create pull request, and give the request a title and description if you would like to</p></li>
+</ol>
+</div></blockquote>
+<ul class="simple">
+<li><p>Now your collaborators can review your edits and make suggestions</p></li>
+<li><p>When ready, you can merge your pull request by doing the following:</p></li>
+</ul>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>At the bottom of the pull request, click merge pull request</p></li>
+<li><p>Click the confirm merge button</p></li>
+<li><p>Now your branch has been merged, and you can safely delete it if you would like!</p></li>
+</ol>
+</div></blockquote>
+<p><img alt="Git Basic Workflow" src="_images/BranchingAndPulling.png" /></p>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial11">
+<h1>Git_Tutorial11<a class="headerlink" href="#git-tutorial11" title="Permalink to this heading">#</a></h1>
+<p><strong>Using the correct professional workflow</strong></p>
+<ol class="arabic simple">
+<li><p><em>Create a new branch</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Branching is a very important concept in Git, and it is crucial to understand that the origin/master branch is always the main branch</p></li>
+<li><p>Anytime that you would like to add something new, you should create a new branch</p></li>
+<li><p>Also, make sure to use descriptive branch names so that it is easy for others that you are working with to understand what you were working on</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p><em>Add commits</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>After your branch was created, then you can get to work editing, adding and deleting files</p></li>
+<li><p>Once you reach a milestone, you should add the changes to your branch using <em>commit</em></p></li>
+<li><p>It is important to use <em>commit</em> because it can help keep track of your work</p></li>
+<li><p>It is also good practice to make a commit message every time you commit something, with what you changed and why</p></li>
+<li><p>Another reason why you should use commit frequently is because it keeps track of the history of commits, so that you can revert back to a previous version if needed</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p><em>Creating a pull request</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>A pull request is used to notify collaborators that you made changes to your branch and you are ready for them to consider and/or review the changes</p></li>
+<li><p>If they like the changes then they can merge them into their branch</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p><em>Review</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Once a pull request has been made, it can be reviewed by whoever has access to the branch</p></li>
+<li><p>Pull requests are designed for collaboration</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p><em>Deploy</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Once everything has been reviewed, and any changes have been made, then it is time for final testing</p></li>
+<li><p>GitHub allows you to deploy from a branch for final testing, before it has been merged with the master/origin branch</p></li>
+</ul>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p><em>Merging</em></p></li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li><p>Now it is finally time to merge the code with the master/origin branch!</p></li>
+</ul>
+</div></blockquote>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial12">
+<h1>Git_Tutorial12<a class="headerlink" href="#git-tutorial12" title="Permalink to this heading">#</a></h1>
+<p><strong>Git URL Protocols</strong><br />
+There are 3 different GIT URL protocols that are available for remote repository connectivity. Here is some information about them:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p><em>HTTPS:</em></p></li>
+</ol>
+<ul class="simple">
+<li><p>HTTPS is a protocol that allows secure communication across the internet</p></li>
+<li><p>Using HTTPS URLs for remote repositories is fairly easy to set up, since it only requires your GitHub username and password</p></li>
+<li><p>HTTPS URLs are typically recommended for beginners, since they do not require any additional configuration</p></li>
+<li><p>example: <a class="github reference external" href="https://github.com/username/repository.git">username/repository.git</a></p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p><em>SSH:</em></p></li>
+</ol>
+<ul class="simple">
+<li><p>SSH is a network protocol that provides a secure way to access and communicate with remote servers</p></li>
+<li><p>Using SSH URLs for remote repositories requires additional setup, which is generating and adding a SSH key to your GitHub account</p></li>
+<li><p>However, once this key is set up, using SSH URLs has the advantage of secure communication, without needing to enter your username and password repeatedly</p></li>
+<li><p>example: <a class="reference external" href="mailto:git&#37;&#52;&#48;github&#46;com">git<span>&#64;</span>github<span>&#46;</span>com</a>:username/repository.git</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p><em>GIT:</em></p></li>
+</ol>
+<ul class="simple">
+<li><p>GIT protocol is a protocol that is unique to Git</p></li>
+<li><p>This protocol does not provide any encryption or authentication mechanisms on its own, so it is typically only used in trusted and local networks</p></li>
+<li><p>The other URL protocols are typically more popular</p></li>
+<li><p>example: git://hostname/path/to/repository.git</p></li>
+</ul>
+</div></blockquote>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial13">
+<h1>Git_Tutorial13<a class="headerlink" href="#git-tutorial13" title="Permalink to this heading">#</a></h1>
+<p><strong>Helpful Git Commands</strong><br />
+<em><strong>git log</strong></em> - displays the entire history of commits, and also displays the commit hash<br />
+<em><strong>git diff</strong></em> - will show the changes between your working directory and the repository’s staging area<br />
+<em><strong>git revert</strong></em> - uses the commit hash to revert to a previous version<br />
+<em><strong>git reset</strong></em> - removes a file from the staging area, but will not affect the working directory</p>
+<p><strong>Helpful Unix Commands</strong><br />
+If you are new to Unix and need to use Git, here are some basic Unix commands that can be helpful when managing Git repositories:</p>
+<ul class="simple">
+<li><p><em>cd</em> is used to change directories, which can be used to navigate to the directory where your Git repository is located</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>&lt;directory&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>ls</em> is used to list the files and directories in the current directory</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>mkdir</em> is used to make a new directory</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>&lt;directory&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>rm</em> is used to remove files or directories</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>&lt;file/directory&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>mv</em> is used to move or rename files or directories</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mv<span class="w"> </span>&lt;source&gt;<span class="w"> </span>&lt;destination&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><em>man</em> is used to access the manual pages for Unix commands, which is used for if you need help with a command</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>man<span class="w"> </span>&lt;command&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<p><strong>Git Alias</strong><br />
+Git aliases are custom shortcuts/abbreviations that you can create to simplify and speed up your Git workflow. Defining aliases for commonly used commands can be extremely helpful.</p>
+<ul class="simple">
+<li><p>To create a Git alias, use the following command:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>&lt;alias&gt;.&lt;alias_name&gt;<span class="w"> </span>&lt;git_command&gt;<span class="w"> </span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>An example of a commonly used alias is the following:</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>config<span class="w"> </span>--global<span class="w"> </span>alias.st<span class="w"> </span>status
+</pre></div>
+</div>
+<!-- section --></section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial14">
+<h1>Git_Tutorial14<a class="headerlink" href="#git-tutorial14" title="Permalink to this heading">#</a></h1>
+<p>What is the command to show changes between the working directory and staging area? (The unstaged changes)</p>
+<div class="dropdown admonition">
+<p class="admonition-title">Click to show solution</p>
+<p>git diff</p>
+<!-- section -->
+</div>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="git-tutorial15">
+<h1>Git_Tutorial15<a class="headerlink" href="#git-tutorial15" title="Permalink to this heading">#</a></h1>
+<p><strong>Conclusion:</strong><br />
+This Git tutorial has provided an overview of the version control system Git, and its fundamental concepts. By using Git and GitHubs functionalities, developers can improve collaboration, and effectively manage their projects!</p>
+<ul class="simple">
+<li><p>The GitHub site also has a lot of great resources to learn from, and to practice with : <a class="reference external" href="https://docs.github.com/en">https://docs.github.com/en</a></p></li>
+<li><p>On that site you can also find a Git cheat sheet which is very helpful!</p></li>
+</ul>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">FSU Libraries Git Tutorial</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial2">Git_Tutorial2</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial3">Git_Tutorial3</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial4">Git_Tutorial4</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial5">Git_Tutorial5</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial6">Git_Tutorial6</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial7">Git_Tutorial7</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial8">Git_Tutorial8</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial9">Git_Tutorial9</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial10">Git_Tutorial10</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial11">Git_Tutorial11</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial12">Git_Tutorial12</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial13">Git_Tutorial13</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial14">Git_Tutorial14</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#git-tutorial15">Git_Tutorial15</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Reagan Bourne
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
